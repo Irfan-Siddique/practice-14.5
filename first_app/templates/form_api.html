@@ -1,0 +1,122 @@
+{% extends "base.html" %} {% block content %}
+<h2 class="text-center">Form API Page</h2>
+<div class="d-flex justify-content-center">
+  <form method="post" action="/submitFormApi/">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="id_name" class="form-label">Enter Name</label>
+      <input type="text" class="form-control" id="id_name" name="name" />
+    </div>
+    <div class="mb-3">
+      <label for="id_comment" class="form-label">Comment</label>
+      <textarea
+        class="form-control"
+        id="id_comment"
+        name="comment"
+        rows="3"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="id_email" class="form-label">Enter Email</label>
+      <input type="email" class="form-control" id="id_email" name="email" />
+    </div>
+    <div class="mb-3">
+      <label for="id_agree" class="form-label">Agree</label>
+      <input type="checkbox" id="id_agree" name="agree" checked />
+    </div>
+    <div class="mb-3">
+      <label for="id_birth_date" class="form-label">Birth Date</label>
+      <input
+        type="date"
+        class="form-control"
+        id="id_birth_date"
+        name="birth_date"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="id_birth_year" class="form-label">Birth Year</label>
+      <select class="form-select" id="id_birth_year" name="birth_year">
+        <option value="1980">1980</option>
+        <option value="1981">1981</option>
+        <option value="1982">1982</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="id_value" class="form-label">Value</label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="id_value"
+        name="value"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="id_email_address" class="form-label">Email Address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="id_email_address"
+        name="email_address"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="id_message" class="form-label">Message</label>
+      <input
+        type="text"
+        class="form-control"
+        id="id_message"
+        name="message"
+        maxlength="10"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="id_first_name" class="form-label">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="id_first_name"
+        name="first_name"
+        value="Your name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="id_day" class="form-label">Day</label>
+      <input
+        type="date"
+        class="form-control"
+        id="id_day"
+        name="day"
+        value="{{ today }}"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Favorite Colors</label>
+      <div>
+        <input
+          type="checkbox"
+          id="color_blue"
+          name="favorite_colors"
+          value="blue"
+        />
+        <label for="color_blue">Blue</label>
+        <input
+          type="checkbox"
+          id="color_green"
+          name="favorite_colors"
+          value="green"
+        />
+        <label for="color_green">Green</label>
+        <input
+          type="checkbox"
+          id="color_black"
+          name="favorite_colors"
+          value="black"
+        />
+        <label for="color_black">Black</label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock content %}
